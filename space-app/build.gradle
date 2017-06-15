@@ -1,0 +1,95 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion project.compileSdkVersion
+    buildToolsVersion project.buildToolsVersion
+
+    defaultConfig {
+        applicationId "com.hdeva.space"
+        minSdkVersion project.minSdkVersion
+        targetSdkVersion project.targetSdkVersion
+        versionCode project.versionCode
+        versionName project.versionName
+        setProperty("archivesBaseName", "Space-$versionName")
+    }
+
+    signingConfigs {
+
+        debug {
+            storeFile file("debug-key.jks")
+            storePassword "space1"
+            keyAlias "space"
+            keyPassword "space1"
+        }
+
+        release {
+            storeFile file(SPACE_RELEASE_KEY_STORE_FILE)
+            storePassword SPACE_RELEASE_KEY_STORE_PASSWORD
+            keyAlias SPACE_RELEASE_KEY_ALIAS
+            keyPassword SPACE_RELEASE_KEY_PASSWORD
+        }
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled true
+            useProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+        }
+
+        release {
+            minifyEnabled true
+//            shrinkResources true // fffffffuuuuuuuuuuuu https://issuetracker.google.com/issues/38411240
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+
+    lintOptions {
+        abortOnError false
+        disable 'InvalidPackage', 'ResourceType'
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(":space-core")
+
+    implementation "com.android.support:design:$supportLibVersion"
+    implementation "com.android.support:recyclerview-v7:$supportLibVersion"
+    implementation "com.android.support:cardview-v7:$supportLibVersion"
+    implementation "com.android.support:support-annotations:$supportLibVersion"
+
+    implementation "com.aurelhubert:ahbottomnavigation:$bottomBarVersion"
+
+    implementation "de.hdodenhof:circleimageview:$circleImageViewVersion"
+
+    implementation "com.google.dagger:dagger:$daggerVersion"
+    implementation "com.google.dagger:dagger-android:$daggerVersion"
+    implementation "com.google.dagger:dagger-android-support:$daggerVersion"
+    annotationProcessor "com.google.dagger:dagger-compiler:$daggerVersion"
+    annotationProcessor "com.google.dagger:dagger-android-processor:$daggerVersion"
+    compileOnly "org.glassfish:javax.annotation:$annotationVersion"
+
+    implementation "com.jakewharton:butterknife:$butterknifeVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$butterknifeVersion"
+
+    implementation "com.github.chrisbanes:PhotoView:$photoViewVersion"
+
+    implementation "com.code-troopers.betterpickers:library:$betterPickersVersion"
+
+    implementation "uk.co.chrisjenx:calligraphy:$calligraphyVersion"
+
+    implementation "com.google.android.exoplayer:exoplayer:$exoPlayerVersion"
+
+    implementation "com.crystal:crystalrangeseekbar:$rangeSeekbarVersion"
+}
+
+apply plugin: 'com.google.gms.google-services'

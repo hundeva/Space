@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/media_viewer_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical">
+
+    <com.github.chrisbanes.photoview.PhotoView
+        android:id="@+id/media_viewer_photo_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:transitionName="@string/image_viewer_photo_view_transition" />
+
+    <ImageView
+        android:id="@+id/media_viewer_play_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_play_white_72dp" />
+
+    <LinearLayout
+        android:id="@+id/media_viewer_top_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:background="@drawable/transparent_bottm_to_translucent_top"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/padding_large">
+
+        <FrameLayout
+            android:layout_width="@dimen/image_viewer_top_icon_container_size"
+            android:layout_height="@dimen/image_viewer_top_icon_container_size"
+            android:background="@color/transparent">
+
+            <ImageView
+                android:id="@+id/media_viewer_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_close_white_24dp" />
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/transparent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/media_viewer_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:paddingTop="@dimen/image_viewer_title_top_padding"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                tools:text="This is the title of the image, that can be very long, multiple lines as well" />
+
+            <TextView
+                android:id="@+id/media_viewer_sub_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                tools:text="This is where basic caption will go, hopefully everything will nicely fit" />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="@dimen/image_viewer_top_icon_container_size"
+            android:layout_height="@dimen/image_viewer_top_icon_container_size"
+            android:background="@color/transparent">
+
+            <ImageView
+                android:id="@+id/media_viewer_share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_share_white_24dp" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/media_viewer_bottom_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@drawable/translucent_bottom_to_transparent_top"
+        android:foreground="?attr/selectableItemBackground"
+        android:orientation="vertical">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/padding_medium" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:paddingLeft="@dimen/padding_large"
+            android:paddingRight="@dimen/padding_large">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text="@string/description"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="@string/tap_for_more"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+
+        </FrameLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/padding_medium" />
+
+        <TextView
+            android:id="@+id/media_viewer_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:ellipsize="end"
+            android:lines="3"
+            android:paddingLeft="@dimen/padding_large"
+            android:paddingRight="@dimen/padding_large"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            tools:text="This is where the description goes, it will probably be damn long for some item, but the maximum length will be three lines, so if it is longer than that, it should be ellipsized at the end correctly, to indiciate there is more to read" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/padding_medium" />
+
+        <include layout="@layout/layout_admob_banner" />
+
+    </LinearLayout>
+
+</FrameLayout>

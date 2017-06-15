@@ -1,0 +1,23 @@
+<resources>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="padding_small">4dp</dimen>
+    <dimen name="padding_medium">8dp</dimen>
+    <dimen name="padding_large">16dp</dimen>
+
+    <dimen name="navigation_header_height">160dp</dimen>
+    <dimen name="collapsible_toolbar_height">200dp</dimen>
+
+    <dimen name="card_content_height">250dp</dimen>
+    <dimen name="card_corner_radius">8dp</dimen>
+    <dimen name="audio_card_content_height">72dp</dimen>
+
+    <dimen name="image_viewer_top_icon_container_size">72dp</dimen>
+    <dimen name="image_viewer_title_top_padding">24dp</dimen>
+
+    <dimen name="fab_bottom_margin">72dp</dimen>
+    <dimen name="search_fab_bottom_margin">88dp</dimen>
+    <dimen name="bottom_sheet_elevation">8dp</dimen>
+
+</resources>

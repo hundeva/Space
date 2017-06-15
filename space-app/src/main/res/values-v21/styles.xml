@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Space.Theme" parent="Base.Space.Theme">
+        <item name="android:windowContentTransitions">true</item>
+    </style>
+
+    <style name="Space.Theme.Splash">
+        <item name="android:windowBackground">@drawable/splash</item>
+        <item name="android:statusBarColor">@color/transparent</item>
+    </style>
+
+    <style name="Space.Theme.Home">
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@color/transparent</item>
+    </style>
+
+</resources>

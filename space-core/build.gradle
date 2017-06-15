@@ -1,0 +1,60 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion project.compileSdkVersion
+    buildToolsVersion project.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion project.minSdkVersion
+        targetSdkVersion project.targetSdkVersion
+        versionCode project.versionCode
+        versionName project.versionName
+    }
+
+    buildTypes {
+        release {
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+
+    api "com.google.dagger:dagger:$daggerVersion"
+    api "com.google.dagger:dagger-android:$daggerVersion"
+    api "com.google.dagger:dagger-android-support:$daggerVersion"
+    annotationProcessor "com.google.dagger:dagger-compiler:$daggerVersion"
+    annotationProcessor "com.google.dagger:dagger-android-processor:$daggerVersion"
+    compileOnly "org.glassfish:javax.annotation:$annotationVersion"
+
+    api "io.paperdb:paperdb:$paperVersion"
+
+    api "com.google.android.gms:play-services-analytics:$gmsVersion"
+
+    api "com.google.firebase:firebase-crash:$gmsVersion"
+    api "com.google.firebase:firebase-config:$gmsVersion"
+    api "com.google.firebase:firebase-ads:$gmsVersion"
+
+    api "com.squareup.moshi:moshi:$moshiVersion"
+    api "com.squareup.okhttp3:okhttp:$okHttpVersion"
+    api "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    api "com.squareup.retrofit2:converter-moshi:$retrofitVersion"
+
+    api "com.annimon:stream:$streamApiVersion"
+
+    api "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion"
+    api "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
+
+    api "com.jakewharton.threetenabp:threetenabp:$jsr310Version"
+
+    api "com.github.bumptech.glide:glide:$glideVersion"
+
+    api "org.parceler:parceler-api:$parcelerVersion"
+    annotationProcessor "org.parceler:parceler:$parcelerVersion"
+}

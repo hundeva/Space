@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="admob_app_id" translatable="false">APP_ID</string>
+    <string name="admob_smart_banner_id" translatable="false">BANNER_ID</string>
+    <string name="admob_large_native_id" translatable="false">NATIVE_ID</string>
+</resources>

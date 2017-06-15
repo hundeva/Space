@@ -1,0 +1,40 @@
+<resources>
+
+    <style name="Base.Space.Theme" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark</item>
+        <item name="colorAccent">@color/color_accent</item>
+
+        <item name="android:windowBackground">@color/blue_grey</item>
+        <item name="android:buttonStyle">@style/Space.Theme.ButtonStyle</item>
+    </style>
+
+    <style name="Space.Theme" parent="Base.Space.Theme">
+
+    </style>
+
+    <style name="Space.Theme.Home">
+
+    </style>
+
+    <style name="Space.Theme.Splash">
+        <item name="android:windowBackground">@drawable/splash</item>
+    </style>
+
+    <style name="Space.Theme.MediaViewer">
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryDark">@color/black</item>
+        <item name="colorAccent">@color/blue_grey</item>
+    </style>
+
+    <style name="Space.Theme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Space.Theme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Space.Theme.ButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+</resources>

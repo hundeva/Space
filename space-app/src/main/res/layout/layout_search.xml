@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_bottom_sheet"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/blue_grey_dark"
+    android:elevation="@dimen/bottom_sheet_elevation"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="0dp"
+    app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/padding_large"
+        android:paddingRight="@dimen/padding_large">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/padding_large" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/bottom_sheet_close"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_close_white_24dp" />
+
+            <Space
+                android:layout_width="@dimen/padding_medium"
+                android:layout_height="match_parent" />
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/home_bottom_sheet_free_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/search_for_nasa_media"
+                android:imeOptions="actionSearch"
+                android:singleLine="true" />
+
+            <Space
+                android:layout_width="@dimen/padding_medium"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:id="@+id/bottom_sheet_search"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_search_white_24dp" />
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/padding_large" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/padding_medium"
+            android:paddingTop="@dimen/padding_large"
+            android:text="@string/date_range"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+            android:textColor="?attr/colorAccent" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/padding_medium" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/padding_small">
+
+            <Space
+                android:layout_width="@dimen/padding_medium"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/home_bottom_sheet_date_range_from"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                tools:text="1900" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/home_bottom_sheet_date_range_to"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                tools:text="2017" />
+
+            <Space
+                android:layout_width="@dimen/padding_medium"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+        <com.crystal.crystalrangeseekbar.widgets.CrystalRangeSeekbar
+            android:id="@+id/home_bottom_sheet_date_range"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:bar_color="@color/white"
+            app:bar_highlight_color="?attr/colorAccent"
+            app:data_type="_integer"
+            app:left_thumb_color="?attr/colorAccent"
+            app:left_thumb_color_pressed="?attr/colorAccent"
+            app:right_thumb_color="?attr/colorAccent"
+            app:right_thumb_color_pressed="?attr/colorAccent" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/padding_large" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/padding_medium"
+                android:paddingTop="@dimen/padding_large"
+                android:text="@string/media_types"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:textColor="?attr/colorAccent" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/padding_medium" />
+
+            <android.support.v7.widget.SwitchCompat
+                android:id="@+id/home_bottom_sheet_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/image"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/padding_medium" />
+
+            <android.support.v7.widget.SwitchCompat
+                android:id="@+id/home_bottom_sheet_video"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/video"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/padding_medium" />
+
+            <android.support.v7.widget.SwitchCompat
+                android:id="@+id/home_bottom_sheet_audio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/audio"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/padding_large" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

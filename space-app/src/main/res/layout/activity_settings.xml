@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/support_appbar" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/padding_medium"
+            android:paddingLeft="@dimen/padding_large"
+            android:paddingRight="@dimen/padding_large"
+            android:paddingTop="@dimen/padding_medium">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/image_quality"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:textColor="?attr/colorAccent" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/padding_medium" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/settings_quality_original"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/original_quality"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/padding_medium" />
+
+                <RadioButton
+                    android:id="@+id/settings_quality_high_definition"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/high_definition_quality"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/padding_medium" />
+
+                <RadioButton
+                    android:id="@+id/settings_quality_standard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/standard_quality"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/padding_medium" />
+
+                <RadioButton
+                    android:id="@+id/settings_quality_low_quality"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/low_quality"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+            </RadioGroup>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/padding_large" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/notifications"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:textColor="?attr/colorAccent" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/padding_medium" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/notify_when_new_apod_available"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/padding_medium" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/settings_apod_notification_late"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/apod_notification_late_day"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/padding_medium" />
+
+                <RadioButton
+                    android:id="@+id/settings_apod_notification_early"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/apod_notification_early_day"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/padding_medium" />
+
+                <RadioButton
+                    android:id="@+id/settings_apod_notification_never"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/apod_notification_never"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</LinearLayout>
